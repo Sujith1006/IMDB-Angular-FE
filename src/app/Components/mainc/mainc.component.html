@@ -1,0 +1,32 @@
+<div class="content-div">
+  <div class="movie-show">
+    <div class="data-movie">
+      <div class="movie-datas">
+        <h1>{{ data["original_title"] }}</h1>
+        <div>
+          <h4>Popularity: {{ data["popularity"] }}</h4>
+          <h4>Ratings:  <i class="fa fa-star" aria-hidden="true"></i>  {{ data["vote_average"] }}</h4>
+          <h4>Vote Count: {{ data["vote_count"] }}</h4>
+        </div>
+        </div>
+        <img src="http://image.tmdb.org/t/p/w185{{ data['backdrop_path'] }}" />
+        <p>
+          <label class="label-desc">Description:</label><br />{{
+            data["overview"]
+          }}
+        </p>
+      </div>
+    </div>
+         <div class="label">   <h1>SimilarMovies:</h1>  </div>
+        <div class="similar-movies">
+            <div *ngFor='let movies of samegenre' class="indi-movie">
+                <div class="solo-movie" (click)='soloselect(movies)'>
+                     <img src="http://image.tmdb.org/t/p/w185{{ movies['backdrop_path'] }}" /> 
+                    <p>{{movies['original_title']}}</p>
+
+                </div>
+                </div>
+
+        </div>
+
+</div>
